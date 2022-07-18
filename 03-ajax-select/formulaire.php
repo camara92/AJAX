@@ -43,7 +43,7 @@ while($ligne = $liste_service->fetch(PDO::FETCH_ASSOC)) {
     <div class="container mt-3">
         <div class="row">
             <div class="col-12 border p-3">
-                <h3 class="p-3">Veuillez chosir un service pour voir la liste des employés</h3>
+                <h3 class="p-3 text-center bg-info ">Veuillez chosir un service pour voir la liste des employés</h3>
 
                 <form method="post" action="" id="form">
                     <div class="row">
