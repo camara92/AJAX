@@ -27,6 +27,38 @@
         </div>
     </div>
     <script>
+        /*
+        
+        Asynchrone (premier A de AJAX)
+        - permet d'éxécuter plusieurs scripts en même temps sans que l'exécution d'un script soit bloquante pour les autres script.
+
+            DOC : 
+            -----
+            https://developer.mozilla.org/fr/docs/Web/API/XMLHttpRequest
+
+            Les statuts AJAX (readyState) et HTTP (status) : 
+                - HTTP : https://fr.wikipedia.org/wiki/Liste_des_codes_HTTP
+                exemple :
+                    200 : ok, page trouvée
+                    404 : page non trouvée
+                    500 : erreur serveur 
+                    ...
+
+                AJAX :
+                    - 0 : l'objet est créé, prépration de la requete ajax (open())
+                    - 1 : On envoie la requete (send())
+                    - 2 : requete reçue par le serveur
+                    - 3 : traitement côté serveur
+                    - 4 : la requete est terminée, nous avons reçue la réponse (responseText)
+
+                On attendra toujours que le statut http soit égal à 200 et le statut ajax soit égal à 4 pour faire nos traitement
+                - l'évènement onreadystatechange permet de vérifier les changement de statuts
+
+                La réponse obtenue est l'intégralité du code source de la page cible.
+        
+        */
+        
+
         // mise en place d'un event sur le bouton id action 
         document.getElementById("action").addEventListener("click", function(){
             // fonction anonyme qui déclenche l'action de l'appel
@@ -40,7 +72,12 @@
                 console.log("Status AJAX "+xhttp.readyState);
               
                 if(xhttp.status == 200 && xhttp.readyState==4){
-                    console.log();
+                    // la réponse (le code cible de la page )=>
+                    console.log(xhttp.responseText);
+                    // resopnse : fait aussi
+                    // on place la réponse dans le fichier html 
+                    // textContent
+                    document.querySelector("#contenu").innerHTML = xhttp.responseText; 
                 }
             }
             // on prépare la comm ajax 
