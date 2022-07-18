@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body { margin: 0; font-family: sans-serif; }
+        header { padding: 90px; background-color: crimson; color: white; }
+        h1 { margin: 0; text-align: center; }
+        .conteneur { max-width: 1000px; margin: 70px auto; border: 1px solid; padding: 20px; }
+        button { display: inline-block; padding: 10px 25px; border: 0; color: white; background-color: royalblue; }
+        h2 { color: white; background-color: royalblue; padding: 20px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mon site</h1>
+    </header>
+    <div class="conteneur">
+        <button id="action">Cliquez ici pour changer le contenu</button>
+        <br>
+        <div id="contenu">
+          
+        </div>
+    </div>
+    <script>
+        // mise en place d'un event sur le bouton id action 
+        document.getElementById("action").addEventListener("click", function(){
+            // fonction anonyme qui déclenche l'action de l'appel
+            // insctancitation d'un ocjet ajax via XMLHTTPREQUEST()
+            let xhttp = new XMLHttpRequest();
+            console.log(xhttp);
+            // mise en place d'un evenement pour vérifier si la communication ajax est arrivé afin de donner les insctructions 
+            xhttp.onreadystatechange= function(){
+                // si la comm est finie 
+                console.log("Status HTTP "+xhttp.status);
+                console.log("Status AJAX "+xhttp.readyState);
+              
+                if(xhttp.status == 200 && xhttp.readyState==4){
+                    console.log();
+                }
+            }
+            // on prépare la comm ajax 
+            xhttp.open("GET", "contenu.txt", true);
+            // xhttp.open(methode, url cible, mode asynchrone ou par défaut à true)
+            // on envoie l'appel ajax 
+            xhttp.send();
+
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+ROLES DES LANGAGES : 
+--------------------
+
+FRONTEND :
+- HTML : Structure d'une page web (régions, blocs, contenus, médias ...)
+- CSS  : Mise en forme de la page (couleurs, tailles, marges ...)
+- JS   : Animations, intéractivité (carousel, évènements ...)
+
+BACKEND :
+- PHP  : Fonctionnalités (formulaires (bdd), sécurité, templates)
+- SQL  : Communication  avec les BDD (Création, récupération, modification et suppression de données)
+
+- MAP : OpenStreetMap avec Leaflet
+
+AJAX : 
+------
+Asynchronous
+Javascript
+And
+Xml | Json
