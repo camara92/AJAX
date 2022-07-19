@@ -18,3 +18,27 @@ Asynchronous
 Javascript
 And
 Xml | Json
+
+https://ink.sapo.pt/
+
+ddd
+
+// https://api.jquery.com/jQuery.ajax/
+// https://api.jquery.com/jQuery.post/
+
+$(document).ready(function () {
+
+    // $('#region').change(function() {  });
+    $('#region').on('change', function() { 
+        $.ajax({
+            type: 'POST',
+            url: 'ajax.php',
+            data: {region_code: $(this).val()},
+            success: function (reponse) {
+                console.log(reponse);
+                $('#departement').html(reponse.resultat);
+            },
+            dataType: 'json'
+        });
+     });
+});

@@ -39,7 +39,7 @@ if(isset($_POST['service'])) {
     $liste = $req->fetchAll(PDO::FETCH_ASSOC);
     $tab['resultat'] .= '<ul class="list-group bg-light">';
     foreach($liste AS $sous_tableau) {
-        $tab['resultat'] .= '<li class="list-group-item">' . ucfirst($sous_tableau['nom']) . ' ' . ucfirst($sous_tableau['prenom']) . ' - ' . $sous_tableau['date_embauche'] . '</li>' ;
+        $tab['resultat'] .= '<li class="list-group-item">' . ucfirst($sous_tableau['nom']) . ' ' . ucfirst($sous_tableau['prenom']) . ' et la date d\'embauche est le :  ' . $sous_tableau['date_embauche'] . '</li>' ;
     }
     $tab['resultat'] .= '</ul>';
 

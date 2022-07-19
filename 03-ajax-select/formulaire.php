@@ -46,14 +46,14 @@ while($ligne = $liste_service->fetch(PDO::FETCH_ASSOC)) {
                 <h3 class="p-3 text-center bg-info ">Veuillez chosir un service pour voir la liste des employés</h3>
 
                 <form method="post" action="" id="form">
-                    <div class="row">
+                    <div class="row my-1">
                         <div class="col-sm-9">
                             <select class="form-select" id="choix">
                                 <?php echo $liste; ?>
                             </select>
                         </div>
                         <div class="col-sm-3">
-                            <button type="submit" class="btn btn-primary w-100">Envoyer</button>
+                            <button type="submit" class="btn btn-primary w-100 ">Envoyer</button>
                         </div>
                     </div>
                 </form>
